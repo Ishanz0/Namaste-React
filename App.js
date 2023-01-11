@@ -1,21 +1,15 @@
-import React from "react"; 
-import ReactDOM from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom";
 
-const Title = () => (
-        <h1 id="title" key="1">Namaste React!</h1>
-);
-
-// Composing Components
-const HeaderComponent = () => {
+const Header = () => {
         return (
-        <div>
-                <Title />
-                <h2>Namaste EveryOne from functional component!</h2>
-                <h2> This is h2 tag! </h2>
-        </div>
+          <div className="header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQAhlwI7XKwKvfcBdrvMEw9r7MkHLjwcn8JQ&usqp=CAU" alt="logo" className="logo" />
+            <input type="text" placeholder="Search..." className="search-bar" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUslyf2F_AtIVKWXioEpPn6ndKjGx3wWsNZg&usqp=CAU" alt="user-icon" className="user-icon" />
+          </div>
         );
-};
+      }
 
-const root1 = ReactDOM.createRoot(document.getElementById("root"));
-
-root1.render(<HeaderComponent />);     
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Header />);
