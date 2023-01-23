@@ -34,12 +34,12 @@
 }
 
 .card > .card-name {
-    height: 30px;
+    height: 40px;
     justify-content: center;
 }
 
 .card > .card-cuisines {
-    height: 60px;
+    height: 80px;
     justify-content: center;
 }
     
