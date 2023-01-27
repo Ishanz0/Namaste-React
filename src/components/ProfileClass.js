@@ -15,15 +15,21 @@ class Profile extends React.Component {
         console.log("Constructor " + this.props.name);
     }
 
-    async componentDidMount() {
-        // API Calls
-        console.log("ComponentDIdMount " + this.props.name);
-        const data = await fetch("https://api.github.com/users/ishanz0")
-        const json = await data.json();
-        console.log(json);
-        this.setState({
-            userInfo: json,
-        });
+    // async componentDidMount() {
+    //     // API Calls
+    //     console.log("ComponentDIdMount " + this.props.name);
+    //     const data = await fetch("https://api.github.com/users/ishanz0")
+    //     const json = await data.json();
+    //     console.log(json);
+    //     this.setState({
+    //         userInfo: json,
+    //     });
+    // }
+
+    componentDidMount() {
+        this.timer = setInterval(() => {
+            console.log("Namaste React OP");
+        }, 1000)
     }
 
     componentDidUpdate() {
@@ -31,6 +37,7 @@ class Profile extends React.Component {
     }
 
     componentWillUnmount() {
+        clearInterval(this.timer)
         console.log("ComponentWillUnmount " + this.props.name);
     }
 

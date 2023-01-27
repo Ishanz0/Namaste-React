@@ -7,6 +7,13 @@ const Profile = (props) => {
 
     useEffect(() => {
         // API Calls
+        const timer = setInterval(() => {
+            console.log("Namaste React functional OP");
+        }, 1000)
+
+        return()=>{
+            clearInterval(timer);
+        }
     }, [])
 
     return (
