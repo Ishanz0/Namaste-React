@@ -25,7 +25,7 @@ const RestaurantMenu = () => {
         ) : (
         <div className="menu">
             <div className="menu-name"> {restaurant?.name} </div>
-            <img src={img_cdn_url + restaurant?.cloudinaryImageId} className="menu-image"/>
+            <img src={restaurant?.cloudinaryImageId && img_cdn_url + restaurant?.cloudinaryImageId} className="menu-image"/>
             <div className="menu-rating"> {restaurant?.avgRating} stars</div>
             <div className="menu-price"> {restaurant?.costForTwoMsg} </div>
         <div className="menu-list">
