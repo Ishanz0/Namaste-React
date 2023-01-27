@@ -23,7 +23,6 @@ class About extends React.Component {
                 {/* <Outlet /> */}
                 {/* <ProfileFunction name={"Ishan"}/>    */}
                 <Profile name={"Child 1"}/>
-                <Profile name={"Child 2"}/>
             </div>
         )
     }
