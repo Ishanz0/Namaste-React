@@ -3,34 +3,22 @@ import { useState, useEffect } from "react";
 import { restaurantList } from "../constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom"
-
-function filterData(searchText, restaurants) {
-    return restaurants.filter((restaurant) => restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-}
+import { filterData } from "../utils/helper";
+import useRestaurants from "../utils/useRestaurants";
+import useOnline from "../utils/useOnline";
+import OfflineMessage from "./OfflineMessage";
 
 const Body = () => { 
 
-    const [searchText, setSearchText] = useState("");  // to create state variable
-    const [allRestaurants, setAllRestaurants] = useState([]);
-    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+    const [searchText, setSearchText] = useState("");
 
-    // empty dependency array => once after rendering
-    // dependency array [searchText] => once after rendering + everytime after rerendering (my searchtext changes)
-    useEffect(() => {
-        getRestaurants();
-    }, [])
+    const [allRestaurants, filteredRestaurants] = useRestaurants();
 
-    async function getRestaurants() {
-        // API calls
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.0384171&lng=72.5288016&page_type=DESKTOP_WEB_LISTING")
-        const json = await data.json();
-        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    }
+    const isOnline = useOnline();
+
+    if (!isOnline) return <OfflineMessage />
 
     if (!allRestaurants) return null;
-
-    // if (filteredRestaurants.length === 0) return <h1> No Restaurants Found! </h1>
 
     return (allRestaurants.length === 0 ) ? <div className="shimmer-card"><Shimmer /></div> : (
     <>

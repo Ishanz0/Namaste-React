@@ -21,8 +21,8 @@ class About extends React.Component {
                 <h1> About Page </h1>
                 <p> Finding the path 😍! </p>
                 {/* <Outlet /> */}
-                <ProfileFunction name={"Ishan"}/>   
-                {/* <Profile name={"Child 1"}/> */}
+                {/* <ProfileFunction name={"Ishan"}/>    */}
+                <Profile name={"Child 1"}/>
             </div>
         )
     }
