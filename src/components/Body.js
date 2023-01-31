@@ -22,10 +22,10 @@ const Body = () => {
 
     return (allRestaurants.length === 0 ) ? <div className="shimmer-card"><Shimmer /></div> : (
     <>
-    <div className="search-container">
-        <input type="text" placeholder="Search Your Bite!" className="search-input" value={searchText}
+    <div className="flex items-center mr-4">
+        <input type="text" placeholder="Search Your Bite!" className="py-2 px-4 ml-2.5 mr-1 rounded border-none outline-none text-base text-white bg-custom-bg-color shadow-md" value={searchText}
         onChange={(e) => {setSearchText(e.target.value); }} />
-        <button className="search-btn" onClick={
+        <button className="py-2 px-4 text-white rounded-md bg-green-500 border-none outline-none cursor-pointer text-base font-normal transition-bg-ease-in-out duration-300 hover:bg-green-700" onClick={
             () => {
                 const data = filterData(searchText, allRestaurants);
                 setFilteredRestaurants(data);
@@ -34,11 +34,11 @@ const Body = () => {
         }>Search</button>
     </div>
 
-    <div className="restaurant-list">
+    <div className="flex flex-wrap">
         {
             filteredRestaurants?.length > 0 ? (
                 filteredRestaurants.map((restaurant) => (
-                    <Link to={
+                    <Link className="no-underline text-black cursor-pointer transition-all duration-300 ease-in-out hover:text-blue-500 hover:scale-110" to={
                         "restaurant/" + restaurant?.data?.id} key={restaurant?.data?.id}>
                             <RestaurantCard {...restaurant?.data} />
                         </Link>

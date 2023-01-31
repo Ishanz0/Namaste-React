@@ -1,4 +1,8 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,15 +67,15 @@
 }
 
 .restaurant-list a {
-    text-decoration: none; /* Remove the underline from the links */
-    color: black; /* Change the color of the links to dark gray */
-    cursor: pointer; /* Change the cursor to pointer when hovering over the links */
-    transition: all 0.3s ease; /* Add a smooth transition to the links */
+    text-decoration: none;
+    color: black;
+    cursor: pointer; 
+    transition: all 0.3s ease; 
 }
 
 .restaurant-list a:hover {
-    color: #0077c9; /* Change the color of the links when hovered to blue */
-    transform: scale(1.1); /* Increase the size of the hovered links slightly */
+    color: #0077c9;
+    transform: scale(1.1);
 }
 
 .search-container {
@@ -178,4 +182,4 @@
     margin-bottom: 10px;
     text-align: center;
 }
-  
+   */
