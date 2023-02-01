@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { restaurantList } from "../constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom"
@@ -7,6 +7,7 @@ import { filterData } from "../utils/helper";
 import useRestaurants from "../utils/useRestaurants";
 import useOnline from "../utils/useOnline";
 import OfflineMessage from "./OfflineMessage";
+import userContext from "../utils/userContext";
 
 const Body = () => { 
 
@@ -15,6 +16,8 @@ const Body = () => {
     const [allRestaurants, filteredRestaurants] = useRestaurants();
 
     const isOnline = useOnline();
+
+    const {user, setUser} = useContext(userContext);
 
     if (!isOnline) return <OfflineMessage />
 
@@ -32,6 +35,10 @@ const Body = () => {
                 console.log(data.length)
             }
         }>Search</button>
+        <input type="text" placeholder="Update User Name!" className="ml-auto py-2 px-4 rounded border-none outline-none text-base text-white bg-custom-bg-color shadow-md"
+        onChange={e => setUser({...user, name: e.target.value})}></input>
+        <input type="text" placeholder="Update User Email!" className="ml-auto py-2 px-4 rounded border-none outline-none text-base text-white bg-custom-bg-color shadow-md"
+        onChange={e => setUser({...user, email: e.target.value})}></input>
     </div>
 
     <div className="flex flex-wrap">

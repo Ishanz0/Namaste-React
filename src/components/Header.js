@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import userContext from "../utils/userContext";
 
 const Title = () => (
     <a href="/">
@@ -13,6 +14,7 @@ const Header = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const isOnline = useOnline();
+    const {user} = useContext(userContext);
     
     return (
 
@@ -29,6 +31,7 @@ const Header = () => {
             </ul>
         </div>
         <h1>{isOnline? '🟢':'🔴' }</h1>
+        <div>{user.name}</div>
         {isLoggedIn ? (
             <button onClick={() => setIsLoggedIn(false)}>Logout</button>
         ) : (
