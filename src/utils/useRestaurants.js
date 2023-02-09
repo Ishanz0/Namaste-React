@@ -18,7 +18,7 @@ const useRestaurants = () => {
         setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     }
 
-    return [allRestaurants, filteredRestaurants];
+    return [allRestaurants, filteredRestaurants, setFilteredRestaurants];
 
 }
 

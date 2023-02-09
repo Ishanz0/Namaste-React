@@ -13,7 +13,7 @@ const Body = () => {
 
     const [searchText, setSearchText] = useState("");
 
-    const [allRestaurants, filteredRestaurants] = useRestaurants();
+    const [allRestaurants, filteredRestaurants, setFilteredRestaurants] = useRestaurants();
 
     const isOnline = useOnline();
 
