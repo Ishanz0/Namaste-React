@@ -6,7 +6,6 @@ const Shimmer = () => {
           type="text"
           placeholder=""
           className="py-2 px-4 ml-2.5 mr-1 rounded border-none outline-none text-base text-white bg-custom-bg-color shadow-md"
-          value=""
         />
         <button className="py-2 px-4 text-white rounded-md bg-green-500 border-none outline-none cursor-pointer text-base font-normal transition-bg-ease-in-out duration-300 hover:bg-green-700">
           Search
