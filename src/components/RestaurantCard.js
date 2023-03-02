@@ -7,12 +7,12 @@ const RestaurantCard = ({ name, cuisines, avgRating, cloudinaryImageId }) => {
 
   return (
     <div className="bg-card-color w-64 rounded-lg shadow-md p-4 m-4">
-      <img className="w-full" src={img_cdn_url + cloudinaryImageId} />
-      <div className="h-10 justify-center">
-        <h3>{name}</h3>
+      <img className="w-full rounded-md" src={img_cdn_url + cloudinaryImageId} />
+      <div className="h-8 justify-center">
+        <h3 className="truncate">{name}</h3>
       </div>
-      <div className="h-24 justify-center">
-        <p>{cuisines.join(", ")}</p>
+      <div className="h-16 justify-center">
+        <p className="line-clamp-2">{cuisines.join(", ")}</p>
       </div>
       <div>{avgRating} stars</div>
       {/* <div>{user.name}</div> */}

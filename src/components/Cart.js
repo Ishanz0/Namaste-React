@@ -37,7 +37,7 @@ const Cart = () => {
             className="bg-card-color w-64 rounded-lg shadow-md p-4 m-4 flex flex-col items-center"
           >
             <img
-              className="w-full"
+              className="w-full rounded-md"
               src={img_cdn_url + item.cloudinaryImageId}
             />
             <div className="h-16 justify-center text-xl">
