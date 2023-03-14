@@ -1,9 +1,12 @@
 {
+  "homepage": "http://ishanz0.github.io/Namaste-React",
   "name": "react-dev",
   "version": "1.0.0",
   "description": "Chapter-02",
   "scripts": {
     "start": "parcel index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "parcel build index.html",
     "test": "jest"
   },
@@ -16,10 +19,10 @@
   "bugs": {
     "url": "https://github.com/Ishanz0/Namaste-React/issues"
   },
-  "homepage": "https://github.com/Ishanz0/Namaste-React#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "gh-pages": "^5.0.0",
     "parcel": "^2.8.2",
     "postcss": "^8.4.21",
     "process": "^0.11.10",
