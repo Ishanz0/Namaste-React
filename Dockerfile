@@ -6,8 +6,6 @@ COPY . /app
 
 RUN npm install --silent
 
-RUN npm run build
-
 EXPOSE 1234
 
 CMD ["npm", "start"]
