@@ -9,12 +9,16 @@ const useRestaurants = () => {
     getRestaurants();
   }, []);
 
+  useEffect(() => {
+    console.log(filteredRestaurants)
+  }, [filteredRestaurants]);
+
   async function getRestaurants() {
     // API calls
     const data = await fetch(FETCH_RESTAURANT_URL);
     const json = await data.json();
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
 
   return [allRestaurants, filteredRestaurants, setFilteredRestaurants];

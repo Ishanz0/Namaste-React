@@ -68,10 +68,10 @@ const Body = () => {
           filteredRestaurants.map((restaurant) => (
             <Link
               className="no-underline text-black cursor-pointer transition-all duration-300 ease-in-out hover:text-blue-500 hover:scale-110"
-              to={"restaurant/" + restaurant?.data?.id}
-              key={restaurant?.data?.id}
+              to={"restaurant/" + restaurant?.info?.id}
+              key={restaurant?.info?.id}
             >
-              <RestaurantCard {...restaurant?.data} />
+              <RestaurantCard {...restaurant?.info} />
             </Link>
           ))
         ) : (
