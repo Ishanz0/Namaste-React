@@ -15,7 +15,7 @@ const useRestaurants = () => {
 
   async function getRestaurants() {
     // API calls
-    const data = await fetch(FETCH_RESTAURANT_URL);
+    const data = await fetch(FETCH_RESTAURANT_URL, {headers: {'Access-Control-Allow-Credentials': true}});
     const json = await data.json();
     setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
