@@ -44,7 +44,7 @@ const Body = () => {
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
             setFilteredRestaurants(data);
-            console.log(data.length);
+            // console.log(data.length);
           }}
         >
           Search

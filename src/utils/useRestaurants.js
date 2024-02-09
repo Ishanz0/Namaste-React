@@ -9,9 +9,9 @@ const useRestaurants = () => {
     getRestaurants();
   }, []);
 
-  useEffect(() => {
-    console.log(filteredRestaurants)
-  }, [filteredRestaurants]);
+  // useEffect(() => {
+  //   console.log(filteredRestaurants)
+  // }, [filteredRestaurants]);
 
   async function getRestaurants() {
     // API calls

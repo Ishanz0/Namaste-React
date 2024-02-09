@@ -7,7 +7,7 @@ import RestaurantMenuCard from "./RestaurantMenuCard";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const restaurant = useRestaurantMenu(resId);
-  console.log(restaurant);
+  // console.log(restaurant);
 
   return restaurant ? (
     <div className="flex flex-col items-center p-5 text-center">
