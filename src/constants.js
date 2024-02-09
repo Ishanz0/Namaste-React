@@ -1,11 +1,14 @@
 export const img_cdn_url =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
+// export const FETCH_MENU_URL =
+//   "https://www.swiggy.com/dapi/menu/v4/full?lat=23.0384171&lng=72.5288016&menuId=";
+
 export const FETCH_MENU_URL =
-  "https://www.swiggy.com/dapi/menu/v4/full?lat=23.0384171&lng=72.5288016&menuId=";
+  "https://cors-proxy.fringe.zone/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&lat=23.02760&lng=72.58710&restaurantId=";
 
 export const FETCH_RESTAURANT_URL =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.0384171&lng=72.5288016&page_type=DESKTOP_WEB_LISTING";
+  "https://cors-proxy.fringe.zone/https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.0384171&lng=72.5288016&page_type=DESKTOP_WEB_LISTING";
 
 export const restaurantList = [
   {

@@ -8,6 +8,7 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
+import NewRestaurantMenu from "./components/NewRestaurantMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
 import userContext from "./utils/userContext";
@@ -65,7 +66,8 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:resId",
-        element: <RestaurantMenu />,
+        // element: <RestaurantMenu />,
+        element: <NewRestaurantMenu />,
       },
       {
         path: "/cart",
