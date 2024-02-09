@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { img_cdn_url } from "../constants";
+import { ALTERNATIVE_IMAGE_URL, img_cdn_url } from "../constants";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { clearCart, removeItem } from "../utils/cartSlice";
@@ -37,14 +37,15 @@ const Cart = () => {
             className="bg-card-color w-64 rounded-lg shadow-md p-4 m-4 flex flex-col items-center"
           >
             <img
-              className="w-full rounded-md"
-              src={img_cdn_url + item.imageId}
+              className="rounded-md w-[224px] h-[141px]"
+              src={item.imageId ? img_cdn_url + item.imageId : ALTERNATIVE_IMAGE_URL}
             />
+
             <div className="h-16 justify-center text-xl">
               <h3 className="line-clamp-2">{item.name}</h3>
             </div>
             <div className="text-xl">Price: {item.price / 100}</div>
-            <div className="my-2">
+            <div className="mt-2">
               <button
                 className="p-2 text-white rounded-md bg-green-500 border-none outline-none cursor-pointer text-base font-normal transition-bg-ease-in-out duration-300 hover:bg-green-700"
                 onClick={() => handleRemoveItem(item)}

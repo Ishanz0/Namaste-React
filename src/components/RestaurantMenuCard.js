@@ -1,4 +1,4 @@
-import { img_cdn_url } from "../constants";
+import { ALTERNATIVE_IMAGE_URL, img_cdn_url } from "../constants";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 
@@ -12,7 +12,7 @@ const RestaurantMenuCard = ({ name, price, imageId }) => {
 
   return (
     <div className="bg-card-color w-64 rounded-lg shadow-md p-4 m-4">
-      <img className="w-full rounded-md" src={img_cdn_url + imageId} />
+      <img className="rounded-md w-[224px] h-[141px]" src={imageId ? (img_cdn_url + imageId) : ALTERNATIVE_IMAGE_URL} />
       <div className="h-16 justify-center">
         <h3 className="line-clamp-2 pt-2 font-semibold">{name}</h3>
       </div>
